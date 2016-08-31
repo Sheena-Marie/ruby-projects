@@ -6,3 +6,6 @@
 2. helloworldstring.rb
 3. helloworldmethod.rb
 4. playground.rb
+
+####Homework Exercises
+analyser.rb - The first of the homework exercises
