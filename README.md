@@ -10,6 +10,8 @@
 ####Homework Exercises
 analyser.rb - The first of the homework exercises
 
+homework_project.rb - create an area code dictionary for 10 cities
+
 #### My own programs
 
 - how-old-r-you.rb
