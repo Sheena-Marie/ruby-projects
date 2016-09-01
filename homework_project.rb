@@ -12,14 +12,9 @@ dial_book = {
   'cairns' => 7
 }
 
-# Method to show each of the cities available
-def list_cities(dial_book)
-  dial_book.each { |city_name, area_code| puts city_name }
-end
-
 # method to show the chosen city and code
-def get_code(city_name, area_code)
-  city_name[area_code]
+def get_area_code(hash, key)
+  hash[key]
 end
 
 loop do
@@ -35,14 +30,18 @@ loop do
 
   # To get the city names
   puts "Which city would you like to look at?"
-  list_cities(dial_book)
-  puts "Please enter the city"
-  city_name = gets.chomp
+  # List the city names
+  dial_book.each { |city_name, area_code| puts city_name }
 
-  if city_name == dial_book.include?(city_name)
-    puts "Sorry, that city does not appear to be in this dictionary. Please choose again"
+  # getting the user to enter the city name and then capturing their answer (and putting it into all lowercase)
+  puts "Please enter the city"
+  city_name = gets.chomp.downcase
+
+  # if/else statement. If the city name they enter doesn't exist, then tell them they goofed and ask them to pick again.
+  if dial_book.include?(city_name)
+    puts "The area code for #{city_name} is #{get_area_code(dial_book, city_name)}"
   else
-    puts "The city name is #{city_name} and the dial code is #{area_code}"
+    puts "Sorry, that city doesn't seem to exist"
   end
 
 end
